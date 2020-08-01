@@ -185,15 +185,11 @@
     </div>
   </div>
   <div class="error container-sm mt-5">
-  <div class="row bg-danger justify-content-center py-3">
+  <div class="row bg-danger justify-content-center py-3 text-white">
     <h3>Revisa tus datos</h3>
   </div>
 </div>
-<div class="exito container-sm mt-5">
-  <div class="row bg-success justify-content-center py-3">
-    <h3>Comentario enviado correctamente</h3>
-  </div>
-</div>
+
 <!--FORMULARIO PARA COMENTARIOS-->
   <form id="enviar-coment" action="#">
     <div class="container-sm mt-5">
@@ -202,18 +198,31 @@
       <label for="nombre" class="text-white text-uppercase font-weight-bold">nombre</label>
       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre" >
     </div>
+    <div class="error-p-n text-warning">
+      <p>Revisa tu nombre</p>
+    </div>
     <div class="form-group">
       <label for="email" class="text-white text-uppercase font-weight-bold">email</label>
       <input type="email" class="form-control" id="email" placeholder="Escribe tu correo electronico" name="email">
+      <div class="error-p text-warning">
+          <p>Revisa el email</p>
+      </div>
     </div>
     <div class="form-group">
       <label for="comentario" class="text-white text-uppercase font-weight-bold">Comentarios</label>
-      <input id="comentario" class="form-control" type="text" placeholder="Dejanos tu comentario" name="comentario" ></input>
+      <textarea id="comentario" class="form-control" type="text" placeholder="Dejanos tu comentario" name="comentario" ></textarea>
+    </div>
+    <div class="error-p-t text-warning">
+      <p>El comentario no puede estar vacio</p>
     </div>
     <input id="btn-submit" type="submit" class="btn btn-success btn-block"></input>
   </div>
   </form>
-  
+  <div class="exito container-sm mt-5">
+    <div class="row bg-success justify-content-center py-3 text-white">
+      <h3>Comentario enviado correctamente</h3>
+    </div>
+  </div>
   <div class="loader">Loading...</div>
   <!--FOOTER - CONTACTO-->
   </div>

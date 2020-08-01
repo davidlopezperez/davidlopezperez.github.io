@@ -6,14 +6,16 @@ const spinner = document.querySelector('.loader');
 const error = document.querySelector('.error');
 const formulario = document.getElementById('enviar-coment')
 const exito = document.querySelector('.exito');
-
+const errorp = document.querySelector('.error-p');
+const errorpn = document.querySelector('.error-p-n');
+const errorpt = document.querySelector('.error-p-t');
 
 eventListeners();
 function eventListeners(){
     document.addEventListener('DOMContentLoaded', inicioApp);
-    email.addEventListener('blur', validarCampos);
-    comentario.addEventListener('blur', validarCampos);
-    nombre.addEventListener('blur', validarCampos);
+    email.addEventListener('blur', validarEmail);
+    comentario.addEventListener('blur', validarComentario);
+    nombre.addEventListener('blur', validarNombre);
     btnSubmit.addEventListener('click', enviarComentario);
 }
 function inicioApp(){
@@ -21,32 +23,38 @@ function inicioApp(){
     spinner.style.display = 'none';
     error.style.display = 'none';
     exito.style.display = 'none';
+    errorp.style.display = 'none';
+    errorpn.style.display = 'none';
+    errorpt.style.display = 'none';
 }
-function validarCampos(){
-    validarLongitud(this);
-    validarEmail(email);
-    if(email.value !== '' && comentario.value !== '' && nombre.value !== ''){
+function validarNombre(){
+    if(nombre.value.length > 3){
+        errorpn.style.display = 'none';
+    }else {
+        errorpn.style.display = 'block';
+    }
+}
+function validarComentario(){
+    if(comentario.value.length > 3){
+        errorpt.style.display = 'none';
         btnSubmit.disabled = false;
-        
+    }else {
+        errorpt.style.display = 'block';
     }
 }
-function validarLongitud(campo){
-    if(campo.value.length > 0){
-        campo.style.borderBottomColor = 'green';
-    }else {
-        campo.style.borderBottomColor = 'red';
-    }
-}
-function validarEmail(campo){
-    const texto = campo.value;
-    if(texto.indexOf('@')=== -1 ){
-        error.style.display = 'block';
-    }else {
-        error.style.display = 'none';
-    }
+
+function validarEmail(){
+   if(email.value.length > 3 && email.value.indexOf('@')){
+        errorp.style.display = 'none'
+   }else {
+       errorp.style.display = 'block';
+   }
 }
 function enviarComentario(e){
+
+    
     e.preventDefault();
+  
     spinner.style.display = 'block';
     
     setTimeout(()=>{
