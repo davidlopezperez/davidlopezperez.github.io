@@ -1,6 +1,14 @@
 html{
     scroll-behavior: smooth;
 }
+html,body{
+    overflow-x: hidden;
+    color:black;
+    height:100%;
+    width:101%;
+    margin: 0px;
+    padding: 0px;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +17,7 @@ html{
 
 body{
     font-family: 'Oswald', sans-serif;
-   background: radial-gradient(circle, rgba(6,9,23,1) 0%, rgba(159,10,18,1) 100%);
+    background: radial-gradient(circle, rgba(6,9,23,1) 0%, rgba(159,10,18,1) 100%);
 }
 
 header nav {
